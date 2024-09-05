@@ -1,4 +1,5 @@
 resource "aws_lambda_function" "ec2_lambda" {
+  role             = "EC2_Lambda role"
   filename         = data.archive_file.lambda_zip.output_path
   function_name    = var.name
   runtime          = "python3.9"
@@ -8,7 +9,6 @@ resource "aws_lambda_function" "ec2_lambda" {
   environment {
     variables = {
       Action = var.schedule_action
-
     }
   }
 

@@ -1,7 +1,6 @@
 variable "name" {
   description = "Define name to use for the lambda function, cloudwatch log and iam role"
   type        = string
-  value       = "ryans-test"
 }
 
 variable "tags" {
@@ -22,4 +21,9 @@ variable "instance_type" {
   description = "The type of EC2 instance to use. E.G. t2.micro"
   type        = string
   default     = "t2.micro"
+}
+
+variable "schedule_action" {
+  description = "The action that is to be scheduled for the Lambda function"
+  type        = string
 }
